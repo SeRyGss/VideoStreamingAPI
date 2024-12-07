@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "d661cfc2-cdb9-485c-9cf9-97d324ed5868",
+		"name": "VideoStreamingAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16783584"
+	},
+	"item": [
+		{
+			"name": "Create video",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Inception\",\r\n  \"synopsis\": \"A skilled thief is given a chance at redemption if he can successfully perform inception.\",\r\n  \"director\": \"Christopher Nolan\",\r\n  \"cast\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, llen Page\",\r\n  \"yearOfRelease\": 2010,\r\n  \"genre\": \"Sci-Fi\",\r\n  \"runningTime\": 148,\r\n  \"content\": \"Base64EncodedContentHere\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/videos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit video",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Inception\",\r\n  \"synopsis\": \"A skilled thief is given a chance at redemption if he can successfully perform inception.\",\r\n  \"director\": \"Christopher Nolan\",\r\n  \"cast\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, llen Page\",\r\n  \"yearOfRelease\": 2010,\r\n  \"genre\": \"Sci-Fi\",\r\n  \"runningTime\": 148,\r\n  \"content\": \"Base64EncodedContentHere\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/videos/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Play video",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/videos/{{id}}/play",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos",
+						"{{id}}",
+						"play"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete video",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/videos/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all videos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/videos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by director",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/videos/search?director=Christopher Nolan",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos",
+						"search"
+					],
+					"query": [
+						{
+							"key": "director",
+							"value": "Christopher Nolan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get stats by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/videos/{{id}}/engagement",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"videos",
+						"{{id}}",
+						"engagement"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "id",
+			"value": "1"
+		}
+	]
+}
